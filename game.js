@@ -31,22 +31,25 @@ function nextSequence(){
   level++;
   $("h1").text("Level " + level);
   var randomNumber = Math.floor(Math.random() * 4);
-  //return randomNumber;
+  
   //Picks a random color and adds it to the gamePattern
-  var randomChosenColor = buttonColors[randomNumber]; //[nextSequence()];
+  var randomChosenColor = buttonColors[randomNumber];
   gamePattern.push(randomChosenColor);
+  
   //Make the corresponding box flash/blink
   $("#" + randomChosenColor).fadeOut(200).fadeIn(200);
+  
   //Play sound for corresponding box
   playSound(randomChosenColor);
 }
 
-
+//Plays the sound with the name passed in
 function playSound(name){
     var sound = new Audio("sounds/" + name + ".mp3");
     sound.play();
 }
 
+//Will briefly flash the button
 function animatePress(currentColor){
     $("#" + currentColor).addClass("pressed");
     setTimeout(function () {
@@ -54,7 +57,7 @@ function animatePress(currentColor){
     }, 100);
 }
 
-
+//Checks whether the user entered the correct answer
 function checkAnswer(currentLevel){
   if (gamePattern[currentLevel] === userClickedPattern[currentLevel]){
     console.log("Success");
