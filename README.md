@@ -1,5 +1,5 @@
 # simon-game
-Using HTML, CSS and Javascript, I was able to implement the Simon game. 
+Using HTML, CSS, Javascript and jQuery, I was able to implement the Simon game. 
 
 Upon pressing any key, the game begins at level one. In each level, one of the four possible colors will flash. This indicates to the user that color is the next in the sequence. The user must remember the correct sequence the colors flashed in.
 
